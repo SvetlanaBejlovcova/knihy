@@ -18,11 +18,11 @@
     if (mysqli_query(
         $con,
         "INSERT INTO books(ISBN, nameAuth, surnameAuth, book, bookDescription) VALUES('" .
-            addslashes($_POST["ISBN"]) . "', '" .
-            addslashes($_POST["nameAuth"]) . "', '" .
-            addslashes($_POST["surnameAuth"]) . "', '" .
-            addslashes($_POST["book"]) . "', '" .
-            addslashes($_POST["bookDescription"]) . "')"
+            htmlspecialchars(addslashes($_POST["ISBN"])) . "', '" .
+            htmlspecialchars(addslashes($_POST["nameAuth"])) . "', '" .
+            htmlspecialchars(addslashes($_POST["surnameAuth"])) . "', '" .
+            htmlspecialchars(addslashes($_POST["book"])) . "', '" .
+            htmlspecialchars(addslashes($_POST["bookDescription"])) . "')"
     )) {
         echo "Úspěšně vloženo.";
     } else {

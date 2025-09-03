@@ -49,16 +49,16 @@
     <table border="1">
         <?php
         while ($radek = @mysqli_fetch_array($vysledek)) { ?>
-            <h4><?php echo $radek["book"]; ?></h4>
+            <h4><?php echo htmlspecialchars($radek["book"]); ?></h4>
             <dl>
                 <dt>ISBN:</dt>
-                <dd><?php echo $radek["ISBN"]; ?></dd>
+                <dd><?php echo htmlspecialchars($radek["ISBN"]); ?></dd>
                 <dt>Jméno autora:</dt>
-                <dd><?php echo $radek["nameAuth"]; ?></dd>,
+                <dd><?php echo htmlspecialchars($radek["nameAuth"]); ?></dd>
                 <dt>Příjmení autora:</dt>
-                <dd><?php echo $radek["surnameAuth"]; ?></dd>
+                <dd><?php echo htmlspecialchars($radek["surnameAuth"]); ?></dd>
             </dl>
-            <p><?php echo $radek["bookDescription"]; ?></p>
+            <p><?php echo htmlspecialchars($radek["bookDescription"]); ?></p>
         <?php
         }
         mysqli_free_result($vysledek);
